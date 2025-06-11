@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "D3GvXoBgtk1jlT/dhzyq2eO9k9Btb98pxyO1CLs61pA=",
+  "Source": "K8sBackEnd",
+  "BasePath": "_content/K8sBackEnd",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
