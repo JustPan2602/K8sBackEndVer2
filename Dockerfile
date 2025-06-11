@@ -1,30 +1,22 @@
-docker build -t k8sbackend .# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-# This stage is used when running from VS in fast mode (Default for Debug configuration)
+# Use the official ASP.NET Core 8 runtime image as base
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER $APP_UID
 WORKDIR /app
 EXPOSE 8080
-EXPOSE 8081
 
-
-# This stage is used to build the service project
+# Use the SDK image to build the app
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["K8sBackEnd/K8sBackEnd.csproj", "K8sBackEnd/"]
-RUN dotnet restore "./K8sBackEnd/K8sBackEnd.csproj"
-COPY . .
-WORKDIR "/src/K8sBackEnd"
-RUN dotnet build "./K8sBackEnd.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# This stage is used to publish the service project to be copied to the final stage
-FROM build AS publish
-ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./K8sBackEnd.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+# Copy csproj and restore
+COPY *.csproj ./
+RUN dotnet restore
 
-# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
+# Copy the rest and build
+COPY . ./
+RUN dotnet publish -c Release -o /app/publish
+
+# Build runtime image
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /app/publish .
 ENTRYPOINT ["dotnet", "K8sBackEnd.dll"]

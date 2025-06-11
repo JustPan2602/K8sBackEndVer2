@@ -17,6 +17,7 @@ D:\MyProject\K8s\6\BackEnd\K8sBackEnd\K8sBackEnd\obj\Debug\net8.0\K8sBackEnd.Ass
 D:\MyProject\K8s\6\BackEnd\K8sBackEnd\K8sBackEnd\obj\Debug\net8.0\K8sBackEnd.csproj.CoreCompileInputs.cache
 D:\MyProject\K8s\6\BackEnd\K8sBackEnd\K8sBackEnd\obj\Debug\net8.0\K8sBackEnd.MvcApplicationPartsAssemblyInfo.cs
 D:\MyProject\K8s\6\BackEnd\K8sBackEnd\K8sBackEnd\obj\Debug\net8.0\K8sBackEnd.MvcApplicationPartsAssemblyInfo.cache
+D:\MyProject\K8s\6\BackEnd\K8sBackEnd\K8sBackEnd\obj\Debug\net8.0\K8sBackEnd.sourcelink.json
 D:\MyProject\K8s\6\BackEnd\K8sBackEnd\K8sBackEnd\obj\Debug\net8.0\scopedcss\bundle\K8sBackEnd.styles.css
 D:\MyProject\K8s\6\BackEnd\K8sBackEnd\K8sBackEnd\obj\Debug\net8.0\staticwebassets.build.json
 D:\MyProject\K8s\6\BackEnd\K8sBackEnd\K8sBackEnd\obj\Debug\net8.0\staticwebassets.development.json
